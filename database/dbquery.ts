@@ -7,11 +7,11 @@ export async function query(query: string): Promise<Response | any>{
     let rows = await connection.query(query);
    
     if(rows[0]){
-        connection.end();
+        // connection.end();
         return rows[0];
     }
     else{
-        connection.end();
+        // connection.end();
         return {};
     }
 }

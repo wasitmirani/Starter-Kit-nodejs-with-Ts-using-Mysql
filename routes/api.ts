@@ -1,8 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import * as db from "../database/dbquery";
-import  {User} from "../models/User";
-
-const user = new User();
+import  { getUsers} from "../controllers/user.controller";
 
 let route = express.Router();
 
@@ -23,7 +21,7 @@ route.get('/', function (req, res) {
 
 
 
-  route.get('/users',user.getAllUsers);
+  route.get('/users',getUsers);
 // Export the router
 export = route;
 
